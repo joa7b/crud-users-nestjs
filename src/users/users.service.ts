@@ -33,7 +33,7 @@ export class UsersService {
 
   async findOne(id: number) {
     try {
-      return await this.usersRepository.findOne({ where: { id } });
+      return await this.usersRepository.findOneOrFail({ where: { id } });
     } catch (error) {
       throw new Error(error);
     }
