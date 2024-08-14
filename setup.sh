@@ -10,7 +10,7 @@ database_configuration() {
   else
     echo "mysql is already installed."
     echo "Creating database if not exists..."
-    mysql -u root -p123456 -e "CREATE DATABASE IF NOT EXISTS miniecommerce_development;" -h 127.0.0.1
+    mysql -u root -p123456 -e "CREATE DATABASE IF NOT EXISTS crud_users_development;" -h 127.0.0.1
     if [ $? -eq 0 ]; then
       echo "Database created successfully or already exists."
       run_migrations

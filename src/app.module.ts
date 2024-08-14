@@ -6,6 +6,7 @@ import { DataSourceOptions } from 'typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import DataSourceConfig from './database/config';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import DataSourceConfig from './database/config';
       useFactory: () => DataSourceConfig() as DataSourceOptions,
       inject: [ConfigService],
     }),
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
